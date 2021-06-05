@@ -1,0 +1,78 @@
+@import "./abstracts/variables", "./abstracts/mixins";
+@import "./base/keyframes", "./base/reset", "./base/typography",
+  "./base/utilities";
+@import "./components/buttons";
+@import "./layout/footer", "./layout/header";
+
+body {
+  @include box-size($width: 100%, $height: 100%);
+  /*background-color: $text_color;*/
+}
+
+.page-wrapper.home {
+  padding-top: 70px;
+
+  h1 {
+    margin-top: 5rem;
+  }
+
+  .landing__arrow {
+    @include fonts($color: $primary_color, $size: 2.5rem);
+    text-shadow: 1px 1px rgb(87, 63, 3);
+    animation: rotate 5s infinite;
+  }
+}
+
+.landing__jumbotron {
+  height: 60vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.27)), url("../img/fractal.jpg") no-repeat center bottom/cover;
+  filter: brightness(120%);
+
+  p {
+    @include fonts($color: darken($primary_color, 10%), $weight: 700, $size: 2.5rem);
+  }
+  
+}
+
+
+/* Contact us/footer */
+
+.contact {
+  background: $text_color;
+
+  section {
+    min-height: 70vh;
+    @include bg-img($overlay, url('../img/contact.jpg'), $background);
+    filter: brightness(200%);
+    clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0% 80%);
+  }
+}
+
+footer {
+  background: $text_color;
+  @include alignment($display: flex, $align: center, $direction: column);
+  color: #fff;
+  min-height: 30vh;
+
+  .social {
+    @include alignment($display: flex, $justify: space-around, $align: center);
+    width: 250px;
+    @include fonts($size: 4vh);
+
+    a {
+      color: lighten($text_color, 30%);
+
+      &:hover {
+        color: lighten($text_color, 40%);
+        transition: 0.2s;
+      }
+    }
+  }
+
+  span {
+    font-size: 1.5rem;
+  }
+}
+
+/* Media queryies */
+@import "./base/media";

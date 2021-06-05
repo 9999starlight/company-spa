@@ -1,0 +1,35 @@
+:root {
+  font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  scroll-behavior: smooth;
+  list-style-type: none;
+  border: none;
+  transition: all 0.1s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+a,
+button,
+input[type="button"] {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+.container-fluid {
+  box-sizing: border-box;
+}

@@ -1,0 +1,44 @@
+@media (min-width: 768px) {
+	.filter {
+	  display: none;
+	}
+  
+	.menu {
+	  display: none;
+	}
+
+	header {
+
+		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.301);
+	}
+  
+	nav {
+	  @include alignment($display: flex, $justify: flex-end);
+	  height: 100%;
+	  background-color: #fff;
+  
+	  ul {
+		@include alignment($direction: row, $align: center);
+		@include positioning($position: relative, $top: 0, $right: 0);
+		margin: 0;
+		@include box-size($width: auto, $height: 100%);
+  
+		li {
+		  border: none;
+
+		  a {
+			  color: $text_color;
+			  &:hover {
+				  background-color: transparent;
+				  color: $primary_color;
+				  text-decoration: none;
+			  }
+		  }
+		}
+	  }
+	}
+
+	.page-wrapper.home {
+		padding-top: 70px;
+	}
+  }

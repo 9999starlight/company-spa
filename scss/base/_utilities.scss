@@ -1,0 +1,23 @@
+$sizes: (1, 2, 3, 4, 5);
+
+@each $size in $sizes {
+  .zindex#{$size} {
+    z-index: #{$size};
+  }
+}
+
+
+.page-wrapper {
+	@include box-size($width: 100%, $min-height: 100vh);
+	flex-direction: column;
+	position: relative;
+	border-bottom: 2px solid red;
+}
+
+.filter {
+	background: rgba(15, 15, 15, 0.849);
+	top: 0;
+	left: 0;
+	height: 100%;
+	animation: left 1s;
+}
