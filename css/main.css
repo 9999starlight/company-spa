@@ -234,29 +234,30 @@ body {
   /*background-color: $secondary_color;*/
 }
 
+/* Home */
 .page-wrapper.home {
   padding-top: 70px;
 }
-.page-wrapper.home h1 {
+.page-wrapper.home h2 {
   margin-top: 5rem;
 }
-.page-wrapper.home .landing__arrow {
+.page-wrapper.home .landing-arrow {
   font-size: 2.5rem;
   color: #da3376;
   text-shadow: 1px 1px #573f03;
   width: 2.5rem;
   margin: 0 auto;
 }
-.page-wrapper.home .landing__arrow span {
+.page-wrapper.home .landing-arrow span {
   animation: rotate 5s infinite;
 }
 
-.landing__jumbotron {
+.landing-jumbotron {
   height: 60vh;
   background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.27)), url("../img/fractal.jpg") no-repeat center bottom/cover;
   filter: brightness(120%);
 }
-.landing__jumbotron p {
+.landing-jumbotron h1 {
   font-size: 2.5rem;
   color: #b9215e;
   font-weight: 700;
@@ -268,7 +269,7 @@ body {
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(10, 1fr);
 }
-.services .services__header {
+.services .services-header {
   background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.57)), url("../img/computer_monitors.jpg") no-repeat center center/cover;
   grid-column: 1/9;
   grid-row: 1/5;
@@ -290,7 +291,7 @@ body {
   grid-area: services-headings;
   margin: 2rem 0;
 }
-.services section .services__article {
+.services section .services-article {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -298,35 +299,35 @@ body {
   border-bottom: 1px solid #f1b5cd;
   height: 100%;
 }
-.services section .services__article.article1 {
+.services section .services-article.article1 {
   grid-area: article1;
 }
-.services section .services__articlev.article2 {
+.services section .services-articlev.article2 {
   grid-area: article2;
 }
-.services section .services__article.article3 {
+.services section .services-article.article3 {
   grid-area: article3;
   border-bottom: none;
 }
-.services section .services__article img {
+.services section .services-article img {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.801);
 }
-.services section .services__article p {
+.services section .services-article p {
   font-size: 2vh;
   line-height: 1.5;
 }
-.services section .services__article .icon-wrapper {
+.services section .services-article .icon-wrapper {
   font-size: 5vh;
   color: #de4984;
 }
-.services section .services__article a {
+.services section .services-article a {
   color: #999999;
   font-style: italic;
 }
-.services section .services__article figure {
+.services section .services-article figure {
   max-height: 300px;
 }
-.services section .services__article figure figcaption {
+.services section .services-article figure figcaption {
   font-size: 1.8vh;
   font-style: italic;
 }
@@ -355,8 +356,8 @@ ul.tabs {
 }
 
 ul.tabs li {
-  width: 100%;
   padding: 0;
+  width: 100%;
   height: 40px;
   line-height: 40px;
   overflow: hidden;
@@ -367,13 +368,11 @@ ul.tabs li {
 ul.tabs li a {
   display: block;
   padding: 0 5px;
-  background: none;
   background: #da3376;
   text-decoration: none;
   color: #fff;
   font-weight: 600;
   outline: none;
-  border: 1px solid #ccc;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   border: 0px;
@@ -444,12 +443,12 @@ ul.tabs li.active a:hover {
 }
 
 /* Media queryies */
-@media (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .services section {
     grid-column: 2/8;
   }
 }
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .filter {
     display: none;
   }
@@ -529,17 +528,17 @@ ul.tabs li.active a:hover {
     border-left: none;
   }
 }
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .services section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "services-headings services-headings services-headings" "article1 article2 article3";
   }
-  .services section .services__article {
+  .services section .services-article {
     border-style: solid;
     border-color: transparent;
     border-width: 2px;
   }
-  .services section .services__article p {
+  .services section .services-article p {
     font-size: 1.1rem;
     line-height: 1.5;
   }
