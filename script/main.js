@@ -55,16 +55,10 @@ $(document).ready(function () {
 	//  back to top button
 	$(window).on('scroll', function () {
 		if ($(this).scrollTop() > 400) {
-			$('.back-to-top').css('display', 'block');
+			$('.back-to-top').css('display', 'flex');
 		} else {
 			$('.back-to-top').css('display', 'none');
 		}
-	});
-
-	$('.back-to-top').on('click', function () {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 400);
 	});
 
 	// Magnific Popup plugin - init form open

@@ -172,7 +172,7 @@ header {
 }
 header img {
   height: 50px;
-  max-width: 100%;
+  max-width: 250px;
   align-self: center;
   display: block;
 }
@@ -422,6 +422,13 @@ ul.tabs li.active a:hover {
   border: none;
   color: #fff;
   text-decoration: underline;
+}
+
+.back-to-top,
+.back-to-top:visited,
+.back-to-top:hover {
+  color: #fff;
+  outline: none;
 }
 
 .white-popup {

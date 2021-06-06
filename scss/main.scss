@@ -211,6 +211,13 @@ ul.tabs li.active a:hover {
   text-decoration: underline;
 }
 
+.back-to-top,
+.back-to-top:visited,
+.back-to-top:hover {
+  color: #fff;
+  outline: none;
+}
+
 .white-popup {
   position: relative;
   background: #fff;
