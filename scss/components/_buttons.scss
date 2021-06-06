@@ -9,8 +9,13 @@
   @include fonts($size: 1.6rem, $color: #fff);
 }
 
-.form-btn {
+.form-btn,
+.form-link {
   background-color: $primary_color;
   @include fonts($color: #fff, $weight: 600);
   width: 200px;
+}
+
+.form-link {
+  width: max-content
 }

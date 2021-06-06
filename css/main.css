@@ -121,11 +121,16 @@ h6 {
   color: #fff;
 }
 
-.form-btn {
+.form-btn,
+.form-link {
   background-color: #da3376;
   color: #fff;
   font-weight: 600;
   width: 200px;
+}
+
+.form-link {
+  width: max-content;
 }
 
 footer {
@@ -403,7 +408,7 @@ ul.tabs li.active a:hover {
   font-weight: 700;
 }
 
-/* Contact us/footer */
+/* Contact us */
 .contact {
   background: #333;
 }
@@ -416,14 +421,6 @@ ul.tabs li.active a:hover {
 }
 
 /* end tabs */
-/* magnific popup */
-.form-link {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  text-decoration: underline;
-}
-
 .back-to-top,
 .back-to-top:visited,
 .back-to-top:hover {
@@ -431,6 +428,7 @@ ul.tabs li.active a:hover {
   outline: none;
 }
 
+/* magnific popup */
 .white-popup {
   position: relative;
   background: #fff;

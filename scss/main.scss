@@ -188,7 +188,7 @@ ul.tabs li.active a:hover {
   @include fonts($color: $secondary_color, $weight: 700);
 }
 
-/* Contact us/footer */
+/* Contact us */
 
 .contact {
   background: $secondary_color;
@@ -203,14 +203,6 @@ ul.tabs li.active a:hover {
 
 /* end tabs */
 
-/* magnific popup */
-.form-link {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  text-decoration: underline;
-}
-
 .back-to-top,
 .back-to-top:visited,
 .back-to-top:hover {
@@ -218,6 +210,7 @@ ul.tabs li.active a:hover {
   outline: none;
 }
 
+/* magnific popup */
 .white-popup {
   position: relative;
   background: #fff;
