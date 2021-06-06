@@ -16,7 +16,7 @@
   list-style-type: none;
   border: none;
   transition: all 0.1s ease;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 a,
@@ -32,4 +32,10 @@ a {
 
 .container-fluid {
   box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

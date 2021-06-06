@@ -1,44 +1,109 @@
-@media (min-width: 768px) {
-	.filter {
-	  display: none;
-	}
-  
-	.menu {
-	  display: none;
-	}
-
-	header {
-
-		box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.301);
-	}
-  
-	nav {
-	  @include alignment($display: flex, $justify: flex-end);
-	  height: 100%;
-	  background-color: #fff;
-  
-	  ul {
-		@include alignment($direction: row, $align: center);
-		@include positioning($position: relative, $top: 0, $right: 0);
-		margin: 0;
-		@include box-size($width: auto, $height: 100%);
-  
-		li {
-		  border: none;
-
-		  a {
-			  color: $text_color;
-			  &:hover {
-				  background-color: transparent;
-				  color: $primary_color;
-				  text-decoration: none;
-			  }
-		  }
-		}
-	  }
-	}
-
-	.page-wrapper.home {
-		padding-top: 70px;
-	}
+@media (min-width: 576px) {
+  .services section {
+    grid-column: 2/8;
   }
+}
+
+@media (min-width: 768px) {
+  .filter {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  header {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.301);
+  }
+
+  nav {
+    @include alignment($display: flex, $justify: flex-end);
+    height: 100%;
+    background-color: #fff;
+
+    ul {
+      @include alignment($direction: row, $align: center);
+      @include positioning($position: relative, $top: 0, $right: 0);
+      margin: 0;
+      @include box-size($width: auto, $height: 100%);
+
+      li {
+        border: none;
+
+        a {
+          color: $secondary_color;
+          &:hover {
+            background-color: transparent;
+            color: $primary_color;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .page-wrapper.home {
+    padding-top: 70px;
+  }
+
+  /* tabs */
+  div.tab-box {
+    overflow: visible;
+  }
+
+  ul.tabs {
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    border-top: 0;
+  }
+
+  ul.tabs li {
+    margin-left: 5px;
+    margin-bottom: -1px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  ul.tabs li a {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  ul.tabs li.active {
+    border: 1px solid $border_color;
+    border-bottom: 0;
+  }
+
+  ul.tabs li:first-of-type {
+    &.active {
+      border-left: none;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .services section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "services-headings services-headings services-headings" "article1 article2 article3";
+
+    .services__article {
+      border-style: solid;
+      border-color: transparent;
+      border-width: 2px;
+
+      p {
+        @include fonts($size: 1.1rem, $height: 1.5);
+      }
+    }
+
+    .article2 {
+      border-color: transparent lighten($primary_color, 30%) transparent
+        lighten($primary_color, 30%);
+    }
+  }
+}

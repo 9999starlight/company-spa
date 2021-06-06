@@ -1,70 +1,74 @@
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	transition: all 0.5s ease-in-out;
-	background: rgba(15, 15, 15, 0.596);
-	@include alignment($display: flex, $justify: space-between, $align: center);
-	height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.2s ease-in-out;
+  background: rgba(15, 15, 15, 0.596);
+  @include alignment($display: flex, $justify: space-between, $align: center);
+  height: 70px;
 
-	
-	img {
-		height: 50px;
-		max-width: 100%;
-		align-self: center;
-		display: block;
-	}
+  img {
+    height: 50px;
+    max-width: 100%;
+    align-self: center;
+    display: block;
   }
-  
-  .menu {
-	height: 7vh;
-	width: 7vh;
-	padding: 0 3rem;
-	cursor: pointer;
-	@include alignment($display: flex, $justify: center, $align: center, $direction: column);
+}
 
-	.line {
-	  width: 40px;
-	  height: 4px;
-	  background-color: #fff;
-	  transition: 0.5s;
-	}
+.menu {
+  height: 7vh;
+  width: 7vh;
+  padding: 0 3rem;
+  cursor: pointer;
+  @include alignment(
+    $display: flex,
+    $justify: center,
+    $align: center,
+    $direction: column
+  );
 
-	.line:nth-of-type(2),
-	.line:nth-of-type(3) {
-	  margin-top: 10px;
-	}
-
-	.line.transform-menu:first-of-type {
-	  transform: rotate(45deg) translate(10px, 10px);
-	}
-
-	.line.transform-menu:nth-of-type(2) {
-	  transform: rotate(-45deg);
-	}
-
-	.line.transform-menu:nth-of-type(3) {
-	  opacity: 0;
-	}
+  .line {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    transition: 0.5s;
   }
 
-  nav {
-	top: 0;
-
-	ul {
-	  @include positioning($position: absolute, $top: 8vh, $left: 0);
-	  @include alignment($direction: column);
-	  width: 100%;
-	  animation: left 1s;
-
-	  li {
-		border-bottom: 1px rgb(83, 81, 81) solid;
-
-		a {
-		  @include fonts($size: 1.2rem, $color: #fff);
-		  font-family: "Raleway", sans-serif;
-		  width: 100%;
-		}
-	  }
-	}
+  .line:nth-of-type(2),
+  .line:nth-of-type(3) {
+    margin-top: 10px;
   }
+
+  .line.transform-menu:first-of-type {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+
+  .line.transform-menu:nth-of-type(2) {
+    transform: rotate(-45deg);
+  }
+
+  .line.transform-menu:nth-of-type(3) {
+    opacity: 0;
+  }
+}
+
+nav {
+  top: 0;
+
+  ul {
+    @include positioning($position: absolute, $top: 8vh, $left: 0);
+    @include alignment($direction: column);
+    width: 100%;
+    animation: left 1s;
+
+    li {
+      border-bottom: 1px rgb(83, 81, 81) solid;
+
+      a {
+        @include fonts($size: 1.2rem, $color: #fff);
+        font-family: "Raleway", sans-serif;
+        width: 100%;
+      }
+    }
+  }
+}

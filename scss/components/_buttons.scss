@@ -1,0 +1,16 @@
+.back-to-top {
+  display: none;
+  @include positioning($position: fixed, $bottom: 50px, $right: 30px);
+  @include box-size($width: 50px, $height: 50px);
+  z-index: 4;
+  outline: none;
+  background-color: lighten($secondary-color, 30%);
+  border-radius: 0.25rem;
+  @include fonts($size: 1.6rem, $color: #fff);
+}
+
+.form-btn {
+  background-color: $primary_color;
+  @include fonts($color: #fff, $weight: 600);
+  width: 200px;
+}

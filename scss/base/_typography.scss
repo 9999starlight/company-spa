@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: 'Raleway', sans-serif;
+  font-family: "Montserrat", sans-serif;
+  @include fonts($color: $secondary_color, $weight: 600);
 }

@@ -3,10 +3,11 @@
   "./base/utilities";
 @import "./components/buttons";
 @import "./layout/footer", "./layout/header";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Raleway&display=swap");
 
 body {
   @include box-size($width: 100%, $height: 100%);
-  /*background-color: $text_color;*/
+  /*background-color: $secondary_color;*/
 }
 
 .page-wrapper.home {
@@ -19,59 +20,215 @@ body {
   .landing__arrow {
     @include fonts($color: $primary_color, $size: 2.5rem);
     text-shadow: 1px 1px rgb(87, 63, 3);
-    animation: rotate 5s infinite;
+    width: 2.5rem;
+    margin: 0 auto;
+
+    span {
+      animation: rotate 5s infinite;
+    }
   }
 }
 
 .landing__jumbotron {
   height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.27)), url("../img/fractal.jpg") no-repeat center bottom/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.59), rgba(0, 0, 0, 0.27)),
+    url("../img/fractal.jpg") no-repeat center bottom/cover;
   filter: brightness(120%);
 
   p {
-    @include fonts($color: darken($primary_color, 10%), $weight: 700, $size: 2.5rem);
+    @include fonts(
+      $color: darken($primary_color, 10%),
+      $weight: 700,
+      $size: 2.5rem
+    );
   }
-  
 }
 
+/* Services */
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  .services__header {
+    @include bg-img($overlay, url("../img/computer_monitors.jpg"), $background);
+    grid-column: 1/9;
+    grid-row: 1/5;
+    @include alignment($align: center, $justify-grid: center);
+  }
+}
+
+.services section {
+  grid-column: 1/9;
+  grid-row: 3/11;
+  @include alignment($display: grid, $align: center, $justify-grid: center);
+  background-color: #fff;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "services-headings" "article1" "article2" "article3";
+
+  .headings-wrapper {
+    grid-area: services-headings;
+    margin: 2rem 0;
+  }
+
+  .services__article {
+    @include alignment($display: flex, $align: center, $direction: column);
+    //text-align: justify;
+    @include fonts($size: 2vh);
+    border-bottom: 1px solid lighten($primary_color, 30%);
+    height: 100%;
+
+    &.article1 {
+      grid-area: article1;
+    }
+
+    &v.article2 {
+      grid-area: article2;
+    }
+
+    &.article3 {
+      grid-area: article3;
+      border-bottom: none;
+    }
+
+    img {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.801);
+    }
+
+    p {
+      @include fonts($size: 2vh, $height: 1.5);
+    }
+
+    .icon-wrapper {
+      @include fonts($color: lighten($primary_color, 5%), $size: 5vh);
+    }
+
+    a {
+      @include fonts($color: lighten($secondary_color, 40%), $style: italic);
+    }
+
+    figure {
+      max-height: 300px;
+
+      figcaption {
+        @include fonts($style: italic, $size: 1.8vh);
+      }
+    }
+  }
+}
+
+/* Career */
+
+.career-head img {
+  height: 300px;
+}
+
+/* tabs */
+
+.tab-box {
+  margin-bottom: 2rem;
+}
+
+ul.tabs {
+  display: block;
+  @include box-size($width: 100, $height: auto);
+  @include alignment($display: flex, $direction: column);
+  border: 1px solid $border_color;
+  border-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+}
+
+ul.tabs li {
+  width: 100%;
+  padding: 0;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid $border_color;
+}
+
+ul.tabs li a {
+  display: block;
+  padding: 0 5px;
+  background: none;
+  background: $primary_color;
+  text-decoration: none;
+  @include fonts($color: #fff, $weight: 600);
+  outline: none;
+  border: 1px solid $border_color;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border: 0px;
+}
+
+.tab-container {
+  border-top: none;
+  overflow: hidden;
+  min-height: 300px;
+  margin-bottom: 10px;
+  border: 1px solid $border_color;
+  border-top: none;
+  background: #fff;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+ul.tabs li.active {
+  border-bottom: 1px solid #fff;
+}
+
+ul.tabs li.active a,
+ul.tabs li.active a:hover {
+  background: #fff;
+  @include fonts($color: $secondary_color, $weight: 700);
+}
 
 /* Contact us/footer */
 
 .contact {
-  background: $text_color;
+  background: $secondary_color;
+}
 
-  section {
-    min-height: 70vh;
-    @include bg-img($overlay, url('../img/contact.jpg'), $background);
-    filter: brightness(200%);
-    clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0% 80%);
+.contact-bg {
+  min-height: 70vh;
+  @include bg-img($overlay, url("../img/contact.jpg"), $background);
+  filter: brightness(200%);
+  clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0% 80%);
+}
+
+/* end tabs */
+
+/* magnific popup */
+.form-link {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.white-popup {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  @include box-size($width: auto, $max-width: 700px, $min-height: 500px);
+  margin: 20px auto;
+
+  h4 {
+    color: $primary_color;
   }
 }
 
-footer {
-  background: $text_color;
-  @include alignment($display: flex, $align: center, $direction: column);
-  color: #fff;
-  min-height: 30vh;
-
-  .social {
-    @include alignment($display: flex, $justify: space-around, $align: center);
-    width: 250px;
-    @include fonts($size: 4vh);
-
-    a {
-      color: lighten($text_color, 30%);
-
-      &:hover {
-        color: lighten($text_color, 40%);
-        transition: 0.2s;
-      }
-    }
-  }
-
-  span {
-    font-size: 1.5rem;
-  }
+// no background for lazy loading bg images
+.no-bg {
+  background: none;
+  background-color: #fff;
 }
 
 /* Media queryies */

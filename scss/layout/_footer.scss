@@ -1,0 +1,31 @@
+footer {
+  background: $secondary_color;
+  @include alignment($display: flex, $align: center, $direction: column);
+  color: #fff;
+  min-height: 30vh;
+
+  .social {
+    @include alignment($display: flex, $justify: space-around, $align: center);
+    width: 250px;
+    @include fonts($size: 4vh);
+
+    a {
+      color: lighten($secondary_color, 30%);
+
+      &:hover {
+        color: lighten($secondary_color, 40%);
+        transition: 0.2s;
+      }
+    }
+  }
+
+  .headings-wrapper h2,
+  .headings-wrapper h4 {
+    color: #fff;
+    margin-top: 2rem;
+  }
+
+  span {
+    font-size: 1.5rem;
+  }
+}

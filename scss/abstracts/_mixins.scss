@@ -20,7 +20,7 @@
 	}
   }
   
-  // BACKGROUND-IMAGE mixin for background image  
+  // BACKGROUND-IMAGE 
   @mixin bg-img($overlay, $url, $background) {
 	background: $overlay, $url $background;
   }
@@ -58,7 +58,7 @@
   }
   
   // POSITIONING 
-  @mixin positioning($position, $top: false, $right: false, $bottom: false, $left: false, $transform: false) {
+  @mixin positioning($position, $top: false, $right: false, $bottom: false, $left: false) {
 	position: $position;
   
 	@if $top {
@@ -75,10 +75,6 @@
   
 	@if $left {
 	  left: $left;
-	}
-  
-	@if $transform {
-	  transform: $transform;
 	}
   }
   
@@ -106,18 +102,5 @@
   
 	@if($min-height) {
 	  min-height: $min-height;
-	}
-  }
-  
-  // mixin background-color & color 
-  @mixin box-style($bg-color: false, $color: false, $border: false) {
-	@if($bg-color) {
-	  background-color: $bg-color;
-	}
-	@if($color) {
-	  color: $color;
-	}
-	@if($border) {
-	  border: $border;
 	}
   }
