@@ -85,13 +85,11 @@ $(document).ready(function () {
 
 	// lazy loading bg images (loading when entering the viewport)
 	const lazyBackground = document.querySelectorAll('.lazy-bg');
-	console.log(lazyBackground)
 	const bgImgObserver = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			if (!entry.isIntersecting) {
 				return;
 			}
-			console.log('bg enetering!')
 			entry.target.classList.remove('no-bg');
 			bgImgObserver.unobserve(entry.target);
 		});
