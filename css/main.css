@@ -307,7 +307,7 @@ body {
 .services section .services-article.article1 {
   grid-area: article1;
 }
-.services section .services-articlev.article2 {
+.services section .services-article.article2 {
   grid-area: article2;
 }
 .services section .services-article.article3 {
@@ -328,9 +328,6 @@ body {
 .services section .services-article a {
   color: #999999;
   font-style: italic;
-}
-.services section .services-article figure {
-  max-height: 300px;
 }
 .services section .services-article figure figcaption {
   font-size: 1.8vh;

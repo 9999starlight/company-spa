@@ -84,7 +84,7 @@ body {
       grid-area: article1;
     }
 
-    &v.article2 {
+    &.article2 {
       grid-area: article2;
     }
 
@@ -111,7 +111,6 @@ body {
     }
 
     figure {
-      max-height: 300px;
 
       figcaption {
         @include fonts($style: italic, $size: 1.8vh);
